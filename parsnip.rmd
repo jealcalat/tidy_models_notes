@@ -6,6 +6,8 @@ date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: pdf_document
 urlcolor: magenta
 ---
+  
+  TODO: alternativa a IRIS https://github.com/allisonhorst/palmerpenguins
 
 ```{r results='hide', message=FALSE, warning=FALSE, include=FALSE}
 knitr::opts_chunk$set(
@@ -147,12 +149,12 @@ anova(mod1, mod2) %>% tidy()
 ¿Por qué todo este jaleo, si de la forma normal solo se requieren tres pasos? Porque podemos evaluar los modelos y obtener métricas de forma no estándar
 
 ```{r}
-iris_inter_lf %>% 
+iris_inter_lf %>%
   collect_metrics()
 ```
 
 ```{r}
-iris_normal_lf %>% 
+iris_normal_lf %>%
   collect_metrics()
 ```
 
@@ -161,13 +163,15 @@ Estas métricas se computan usando los datos de prueba, por lo que sabemos que e
 Ahora podemos graficar las predicciones del modelo contra los valores reales (agregamos línea con pendiente de 1).
 
 ```{r}
-iris_inter_lf %>% 
-  collect_predictions() %>% 
+iris_inter_lf %>%
+  collect_predictions() %>%
   ggplot(aes(.pred, Petal.Length)) +
   geom_point() +
   geom_abline(intercept = 0, slope = 1, color = "orange") +
-  labs(x = "Petal.Length predicha",
-       y = "Petal.Length observada",
-       title = "") +
+  labs(
+    x = "Petal.Length predicha",
+    y = "Petal.Length observada",
+    title = ""
+  ) +
   theme_minimal()
 ```
