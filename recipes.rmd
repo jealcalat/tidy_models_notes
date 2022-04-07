@@ -7,7 +7,7 @@ output: pdf_document
 urlcolor: magenta
 ---
 
-## Capítulo 8 de [`tmwr`](https://www.tmwr.org/recipes.html)
+# Capítulo 8 de [`tmwr`](https://www.tmwr.org/recipes.html)
 
 Preprocesar datos incluye:
 
@@ -38,7 +38,14 @@ library(tidymodels)
 
 ### `recipe()`
 
-Según la documentación: "Define operaciones en los datos y sus roles asociados". Preprocesar incluye reducir la cantidad de predictores (por ejemplo, si existe correlación entre ellos) mediante extracción de factores (*feature extraction*). También, mediante métodos de imputación, corregir la presencia de valores peridos. Otra es estimar una transformación de los datos originales, en vez de los originales, si alguna característica (e.g., simetría) es necesaria o facilita el modelamiento.
+Según la documentación: "Define operaciones en los datos y sus roles asociados". Preprocesar incluye reducir la cantidad de predictores (por e´jemplo, si existe correlación entre ellos) mediante extracción de factores (*feature extraction*) e ingeniería de variables. También, mediante métodos de imputación, corregir la presencia de valores perdidos. Otra es estimar una transformación de los datos originales, en vez de los originales, si alguna característica (e.g., simetría) es necesaria o facilita el modelamiento.
+
+#### Funciones asociadas: 
+
+- [`prep()`](https://recipes.tidymodels.org/reference/prep.html): las operaciones de preprocesamiento especificadas en `recipe()` son ejecutadas y guardadas en memoria.
+- [`bake()`](https://recipes.tidymodels.org/reference/bake.html): un objeto preprocesado con `prep()` puede ser aplicado a un nuevo conjunto de datos, a menos que se especifique el argumento `new_data=NULL`, en cuyo caso retorna el conjunto original *preprocesado*.
+
+Nota: los anteriores pasos *no son necesarios* si la receta es usada con `workflow()`. Si se desea comprobar los pasos y las manipulaciones, `prep()` y luego `bake(new_data=NULL)` lo muestran. 
 
 #### Ames housing data
 

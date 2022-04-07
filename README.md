@@ -1,15 +1,22 @@
-# Notas de tidymodels
+# Notas de `tidymodels`
 
-Basadas en [Tidy Modeling with R](https://www.tmwr.org/) (tmwr).
+Basadas en [Tidy Modeling with R](6) (tmwr) y en [Feature Engineering & Selection](https://bookdown.org/max/FES/).
+
 
 `tidymodels` es un metapaquete compuesto de los siguientes paquetes:
 
-- [`recipes`]() para pre-procesamiento
-- [`parsnip`]() para modelar
-- [`yardstick`]() para evaluar la ejecución del modelo
-- [`rsample`]() para dividir y muestrear y evaluar
-- [`tune`]() para mejorar y ajustar parámetros de modelos
-  
+- [`recipes`](https://recipes.tidymodels.org/) para pre-procesamiento.
+  - Notas [aquí](recipes.pdf)
+- [`parsnip`](https://parsnip.tidymodels.org/) para modelar
+- [`yardstick`](https://yardstick.tidymodels.org/) para evaluar la ejecución del modelo
+- [`rsample`](https://rsample.tidymodels.org/) para dividir y muestrear y evaluar
+- [`tune`](https://tune.tidymodels.org/) para mejorar y ajustar parámetros de modelos
+
+Tanto `tidymodels` como `tidyverse` se basan en la filosofía de *tidy data* para extraer información de los datos: una filosofía sobre el flujo de trabajo en la limpieza, manipulación, transformación, visualización y modelamiento de datos de la forma más eficiente posible. Se puede ver [aquí](https://www.jstatsoft.org/article/view/v059i10). La parte de la que se hace cargo `tidymodels`es del modelamiento con principios *tidy*
+
+<p align="center">
+  <img src="imgs/data-science-model.svg" />
+</p>
 
 ## Taxonomía de modelos
 
